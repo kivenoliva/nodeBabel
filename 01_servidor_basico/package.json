@@ -1,0 +1,15 @@
+{
+  "name": "01_servidor_basico",
+  "version": "1.0.0",
+  "description": "Primer ejemplo de servidor node",
+  "main": "bucleAsin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Oliva Muñoz",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.2",
+    "chance": "^1.0.1"
+  }
+}
