@@ -11,14 +11,20 @@ var admin = require('./routes/admin');
 
 var app = express();
 
+/*
+app.use(function(req, res, next){
+  var algo = req.query.algo || "";
+  req.algo = algo;
+  next(err);
+
+});
+*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));  //le dices que siempre que te rendericen una vista te vayas a views
 app.set('view engine', 'ejs');  //el motor para generar las vistas es js
 
-
-
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));  //para poner favicon comentado por defecto
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));//para poner favicon comentado por defecto
 app.use(logger('dev')); //cada petición que llegue, express va a llamar a esto.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
