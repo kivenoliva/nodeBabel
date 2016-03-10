@@ -5,9 +5,22 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//Modelos
+require("./models/user_model.js"); //require para que se cargue mongoose porque el connection lo estoy haciendo aqui
+                                    // y quiero que lo tenga la aplicación
+
+
+
+// Rutas de web
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
+
+
+// Rutas de api V1
+var apiUsers = require("./routes/api/v1/users_v1");
+
+
 
 var app = express();
 
@@ -34,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);
+app.use("/api/v1/users_v1", apiUsers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
