@@ -11,7 +11,6 @@ var userEsquema = mongoose.Schema({
 	name: String,
 	age: Number
 });
-
 userEsquema.statics.list = function(sort, callback){
 	// Preparamos la query sin ejecutarla.
 	var query = User.find({});

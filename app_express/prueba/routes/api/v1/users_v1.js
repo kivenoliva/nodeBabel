@@ -5,6 +5,19 @@ var router = express.Router();
 var mongoose = require('mongoose');
 
 var User = mongoose.model("User");
+var auth = require("../../../lib/auth");
+
+
+/**
+ * foo does some multiplication magic
+ * @param  {Number} bar var number 1
+ * @param  {Number} baz var number 2
+ * @return {Number}     this equals bar*baz
+ */
+ 
+router.use(auth("admin", "pass"));
+
+
 
 router.get('/', function(req, res) {
 
